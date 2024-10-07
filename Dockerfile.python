@@ -1,0 +1,17 @@
+FROM python:3.9-slim
+
+WORKDIR ~/app
+
+COPY . .
+
+RUN pip install -r requirements.txt
+
+ENV DB_HOST="172.20.0.10"
+ENV DB_USER="app"
+ENV DB_PASSWORD="QwErTy1234"
+ENV DB_NAME="virtd"
+ENV MYSQL_ROOT_PASSWORD="YtReWq4321"
+
+
+ENTRYPOINT ["python"]
+CMD ["main.py"]
